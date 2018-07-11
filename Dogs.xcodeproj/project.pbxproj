@@ -13,6 +13,8 @@
 		CFCC947F20F6B5B700208879 /* Dogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFCC947D20F6B5B700208879 /* Dogs.xcdatamodeld */; };
 		CFCC948120F6B5B800208879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFCC948020F6B5B800208879 /* Assets.xcassets */; };
 		CFCC948420F6B5B800208879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFCC948220F6B5B800208879 /* LaunchScreen.storyboard */; };
+		CFCC948C20F6B9F400208879 /* uploadPic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFCC948B20F6B9F300208879 /* uploadPic.jpg */; };
+		CFCC948E20F6BC1000208879 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC948D20F6BC1000208879 /* AddVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CFCC948020F6B5B800208879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFCC948320F6B5B800208879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFCC948520F6B5B800208879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFCC948B20F6B9F300208879 /* uploadPic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = uploadPic.jpg; path = Dogs/uploadPic.jpg; sourceTree = "<group>"; };
+		CFCC948D20F6BC1000208879 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		CFCC946A20F6B5B700208879 = {
 			isa = PBXGroup;
 			children = (
+				CFCC948B20F6B9F300208879 /* uploadPic.jpg */,
 				CFCC947520F6B5B700208879 /* Dogs */,
 				CFCC947420F6B5B700208879 /* Products */,
 			);
@@ -60,6 +65,7 @@
 				CFCC947820F6B5B700208879 /* ViewController.swift */,
 				CFCC947A20F6B5B700208879 /* Main.storyboard */,
 				CFCC948020F6B5B800208879 /* Assets.xcassets */,
+				CFCC948D20F6BC1000208879 /* AddVC.swift */,
 				CFCC948220F6B5B800208879 /* LaunchScreen.storyboard */,
 				CFCC948520F6B5B800208879 /* Info.plist */,
 				CFCC947D20F6B5B700208879 /* Dogs.xcdatamodeld */,
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCC948C20F6B9F400208879 /* uploadPic.jpg in Resources */,
 				CFCC948420F6B5B800208879 /* LaunchScreen.storyboard in Resources */,
 				CFCC948120F6B5B800208879 /* Assets.xcassets in Resources */,
 				CFCC947C20F6B5B700208879 /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCC948E20F6BC1000208879 /* AddVC.swift in Sources */,
 				CFCC947920F6B5B700208879 /* ViewController.swift in Sources */,
 				CFCC947F20F6B5B700208879 /* Dogs.xcdatamodeld in Sources */,
 				CFCC947720F6B5B700208879 /* AppDelegate.swift in Sources */,
