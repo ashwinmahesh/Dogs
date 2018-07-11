@@ -30,6 +30,13 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            uploadButton.setBackgroundImage(pickedImage, for: .normal)
+        }
+        uploadButton.setTitle("", for: .normal)
+        dismiss(animated: true, completion: nil)
+    }
     
 
     /*
