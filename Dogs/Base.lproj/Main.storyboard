@@ -101,6 +101,9 @@
                                 <state key="normal" title="Add Dog">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPushed:" destination="kJi-VN-8XG" eventType="touchUpInside" id="Zi8-gz-4sq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaZ-d9-Xgh">
                                 <rect key="frame" x="117" y="346" width="141" height="141"/>
@@ -146,9 +149,11 @@
                         <outlet property="nameField" destination="SqD-HG-ARa" id="Vyv-hl-qOB"/>
                         <outlet property="treatField" destination="qqF-Tv-YOe" id="u13-fI-qzU"/>
                         <outlet property="uploadButton" destination="BaZ-d9-Xgh" id="bV8-J1-UzV"/>
+                        <segue destination="bvD-yu-2bs" kind="unwind" identifier="UnwindSegue" unwindAction="unwindToMainVCWithSegue:" id="WnZ-SE-jZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CxQ-XS-446" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bvD-yu-2bs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2088.8000000000002" y="-564.46776611694156"/>
         </scene>

@@ -38,7 +38,10 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func submitPushed(_ sender: UIButton) {
+        performSegue(withIdentifier: "UnwindSegue", sender: sender)
+    }
+    
     /*
     // MARK: - Navigation
 
