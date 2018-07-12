@@ -79,6 +79,10 @@ class ViewController: UIViewController {
         dog.name = source.nameField.text
         dog.color = source.colorField.text
         dog.treat = source.treatField.text
+        let imageData = UIImagePNGRepresentation(source.pictureButton.backgroundImage(for: .normal)!)!
+        dog.image = imageData.base64EncodedString(options: .lineLength64Characters)
+        appDelegate.saveContext()
+        collectionView.reloadData()
     }
     @IBAction func unwindForDelete(segue: UIStoryboardSegue){
         print("Deleting")
