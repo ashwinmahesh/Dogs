@@ -24,13 +24,22 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         fetchAll()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPathInt = sender as? Int{
+            print("Index Path Int is: ", indexPathInt)
+            let dog = tableData[indexPathInt]
+//            print(dog.name, dog.color, dog.treat)
+            let nav = segue.destination as! UINavigationController
+            let dest = nav.topViewController as! EditVC
+            dest.nameText = dog.name
+            dest.colorText = dog.color
+            dest.treatText = dog.treat
+            dest.pictureText = dog.image
+        }
+    }
     func fetchAll(){
         let request:NSFetchRequest<Dog> = Dog.fetchRequest()
         do{
-//            let dogs = try context.fetch(request)
-//            for dog in dogs{
-//                print(dog.name)
-//            }
             tableData = try context.fetch(request)
             for dog in tableData{
                 print(dog.name!)
@@ -40,7 +49,6 @@ class ViewController: UIViewController {
                 else{
                     print("Dog does not have image")
                 }
-//                print(dog.image!)
             }
         }
         catch{
@@ -57,32 +65,32 @@ class ViewController: UIViewController {
         newDog.image = imageData.base64EncodedString(options: .lineLength64Characters)
         appDelegate.saveContext()
         print("Dog successfully added")
+        tableData.append(newDog)
+        collectionView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return (tableData.count/2 + tableData.count%2)
-//    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 2
         return tableData.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! CustomCell
         print("Index path item is: \(indexPath.item)")
         cell.mainButton.setTitle(tableData[indexPath.item].name, for: .normal)
-//        if let decodedData = Data(base64Encoded: tableData[indexPath.item].image!, options: NSData.Base64DecodingOptions(rawValue: 0)){
         if let decodedData = Data(base64Encoded: tableData[indexPath.item].image!, options: .ignoreUnknownCharacters){
             let decodedImage:UIImage = UIImage(data: decodedData)!
             cell.mainButton.setBackgroundImage(decodedImage, for: .normal)
-            
         }
-        
-        
+        cell.controller = self
+        cell.indexPathItem = indexPath.item
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("You selected this")
+    }
+    
 }
 
