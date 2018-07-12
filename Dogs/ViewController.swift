@@ -80,6 +80,16 @@ class ViewController: UIViewController {
         dog.color = source.colorField.text
         dog.treat = source.treatField.text
     }
+    @IBAction func unwindForDelete(segue: UIStoryboardSegue){
+        print("Deleting")
+        let source = segue.source as! EditVC
+        let dog = tableData[source.indexPathInt!]
+        tableData.remove(at: source.indexPathInt!)
+        context.delete(dog)
+        appDelegate.saveContext()
+        print("Successfully deleted")
+        collectionView.reloadData()
+    }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

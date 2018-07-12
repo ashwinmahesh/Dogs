@@ -78,6 +78,9 @@
                                 <state key="normal" title="Delete Dog">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deletePushed:" destination="d21-tR-IEk" eventType="touchUpInside" id="6QV-ma-JMe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -122,6 +125,7 @@
                         <outlet property="pictureButton" destination="6ig-ME-bak" id="Zwt-sU-h32"/>
                         <outlet property="treatField" destination="r5T-YI-m4c" id="FSj-iO-r31"/>
                         <segue destination="M2S-nw-Dse" kind="unwind" identifier="EditUnwindSegue" unwindAction="unwindFromEditWithSegue:" id="Lbv-dv-mty"/>
+                        <segue destination="M2S-nw-Dse" kind="unwind" identifier="DeleteUnwindSegue" unwindAction="unwindForDeleteWithSegue:" id="lDG-pR-b8I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdH-ic-h7j" userLabel="First Responder" sceneMemberID="firstResponder"/>

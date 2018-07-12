@@ -25,6 +25,9 @@ class EditVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func deletePushed(_ sender: UIButton) {
+        performSegue(withIdentifier: "DeleteUnwindSegue", sender: "delete")
+    }
     @IBAction func savePushed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditUnwindSegue", sender: indexPathInt)
     }
