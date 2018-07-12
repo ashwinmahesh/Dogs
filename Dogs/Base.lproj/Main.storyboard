@@ -110,16 +110,22 @@
                                 <action selector="cancelPushed:" destination="d21-tR-IEk" id="pzK-0A-A1p"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zdl-Z8-eod"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zdl-Z8-eod">
+                            <connections>
+                                <action selector="savePushed:" destination="d21-tR-IEk" id="hyd-vg-qdr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="colorField" destination="q5e-Ow-pGn" id="QLh-nP-LiX"/>
                         <outlet property="nameField" destination="3Qz-SR-kEf" id="JYx-yO-IGb"/>
                         <outlet property="pictureButton" destination="6ig-ME-bak" id="Zwt-sU-h32"/>
                         <outlet property="treatField" destination="r5T-YI-m4c" id="FSj-iO-r31"/>
+                        <segue destination="M2S-nw-Dse" kind="unwind" identifier="EditUnwindSegue" unwindAction="unwindFromEditWithSegue:" id="Lbv-dv-mty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdH-ic-h7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M2S-nw-Dse" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1992.8" y="-1351.5742128935533"/>
         </scene>

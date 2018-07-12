@@ -35,6 +35,7 @@ class ViewController: UIViewController {
             dest.colorText = dog.color
             dest.treatText = dog.treat
             dest.pictureText = dog.image
+            dest.indexPathInt = indexPathInt
         }
     }
     func fetchAll(){
@@ -70,6 +71,14 @@ class ViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    @IBAction func unwindFromEdit(segue: UIStoryboardSegue){
+        print("Back from editing")
+        let source = segue.source as! EditVC
+        let dog = tableData[source.indexPathInt!]
+        dog.name = source.nameField.text
+        dog.color = source.colorField.text
+        dog.treat = source.treatField.text
     }
 }
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{

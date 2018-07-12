@@ -15,6 +15,7 @@ class EditVC: UIViewController {
     @IBOutlet weak var treatField: UITextField!
     @IBOutlet weak var pictureButton: UIButton!
     
+    var indexPathInt:Int?
     var nameText:String?
     var colorText:String?
     var treatText:String?
@@ -22,6 +23,10 @@ class EditVC: UIViewController {
     
     @IBAction func cancelPushed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func savePushed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "EditUnwindSegue", sender: indexPathInt)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
